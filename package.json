@@ -1,7 +1,9 @@
 {
   "name": "@ima-worldhealth/odk-central-api",
-  "version": "1.0.0",
-  "publishConfig": {"access": "public"},
+  "version": "1.0.1",
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": "./index.js",
   "type": "module",
   "author": "Jonathan Niles <jonathanwniles@gmail.com>",
