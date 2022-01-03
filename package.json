@@ -1,20 +1,30 @@
 {
-  "name": "odk-central-api",
+  "name": "@ima-worldhealth/odk-central-api",
   "version": "1.0.0",
   "exports": "./index.js",
   "type": "module",
   "author": "Jonathan Niles <jonathanwniles@gmail.com>",
   "license": "MIT",
   "node": "^12.20.0 || ^14.13.1 || >=16.0.0",
-  "scripts" : {
-    "test" : "ava"
+  "scripts": {
+    "test": "ava",
+    "release": "release-it --disable-metrics"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "release": true
+    }
   },
   "devDependencies": {
     "ava": "^3.15.0",
     "eslint": "^8.6.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-ava": "^13.1.0",
-    "eslint-plugin-import": "^2.25.3"
+    "eslint-plugin-import": "^2.25.3",
+    "release-it": "^14.11.8"
   },
   "dependencies": {
     "dotenv": "^10.0.0",
