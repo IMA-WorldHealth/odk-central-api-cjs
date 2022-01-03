@@ -17,5 +17,3 @@ blocks:
             - yarn test
       secrets:
         - name: ODK Central Test Server
-    secrets:
-      - name: ODK Central Test Server
