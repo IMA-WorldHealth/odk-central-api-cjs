@@ -1,0 +1,20 @@
+version: v1.0
+name: ODK Central API
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+
+blocks:
+  - name: Install dependencies and Test
+    task:
+      jobs:
+        - name: yarn install deps
+          commands:
+            - checkout
+            - node --version
+            - yarn --version
+            - yarn
+        - name: Run tests
+          commands:
+            - yarn test
