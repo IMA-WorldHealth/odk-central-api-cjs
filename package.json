@@ -10,6 +10,8 @@
   "license": "MIT",
   "node": "^12.20.0 || ^14.13.1 || >=16.0.0",
   "scripts": {
+    "prepublishOnly" : "yarn test",
+    "preversion" : "yarn test",
     "test": "ava",
     "release": "release-it --disable-metrics"
   },
