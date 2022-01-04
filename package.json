@@ -10,17 +10,13 @@
   "license": "MIT",
   "node": "^12.20.0 || ^14.13.1 || >=16.0.0",
   "scripts": {
-    "before:init": "yarn test",
     "test": "ava",
     "release": "release-it --disable-metrics"
   },
   "release-it": {
-    "github": {
-      "release": true
-    },
-    "npm": {
-      "release": true
-    }
+    "github": { "release": true },
+    "npm": { "release": true },
+    "hooks" : { "before:init": "yarn test" }
   },
   "devDependencies": {
     "ava": "^3.15.0",
