@@ -3,8 +3,8 @@ import test from 'ava';
 
 import { api } from '../index.js';
 
-test('#getProjects returns list of projects', async (t) => {
-  const projects = await api.getProjects();
+test('#projects.getProjects returns list of projects', async (t) => {
+  const projects = await api.projects.getProjects();
 
   t.is(projects.length, 1);
 
@@ -29,8 +29,8 @@ test('#users.getUserDetails() returns details of a user', async (t) => {
   t.is(user.type, 'user');
 });
 
-test('#getProjectById() returns a project by id', async (t) => {
-  const project = await api.getProjectById(17);
+test('#projects.getProjectById() returns a project by id', async (t) => {
+  const project = await api.projects.getProjectById(17);
 
   t.is(project.id, 17);
   t.is(project.name, 'Integration Test Project');
