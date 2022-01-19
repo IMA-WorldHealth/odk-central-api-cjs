@@ -1,7 +1,6 @@
-import _ from 'dotenv/config';
-import test from 'ava';
-
-import { auth } from '../index.js';
+require('dotenv').config();
+const test = require('ava');
+const { auth } = require('..');
 
 test('auth.client() returns an authenticated client', async (t) => {
   const client = await auth.client();

@@ -1,7 +1,6 @@
-import _ from 'dotenv/config';
-import test from 'ava';
-
-import { api } from '../index.js';
+require('dotenv').config();
+const test = require('ava');
+const { api } = require('..');
 
 test('#projects.getProjects returns list of projects', async (t) => {
   const projects = await api.projects.getProjects();

@@ -1,4 +1,4 @@
-import * as api from './lib/api.js';
-import * as auth from './lib/auth.js';
+const api = require('./lib/api');
+const auth = require('./lib/auth');
 
-export { auth, api };
+module.exports = { api, auth };
