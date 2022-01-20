@@ -79,7 +79,9 @@ test('#getProjectAssignmentsForForms() returns project assignments for a form', 
 
 test('#getFormsByProjectId() returns forms in the project id', async (t) => {
   const forms = await api.getFormsByProjectId(17);
-  t.is(forms.length, 1);
+
+  // can't use the t.is() because we may have asynchronously created a new form.
+  t.true(forms.length >= 1);
 
   const [form] = forms;
   t.is(form.projectId, 17);
@@ -134,7 +136,7 @@ test('#getFormSchemaByProjectIdAndFormId() returns the form schema by project an
   t.is(field.type, 'string');
 });
 
-test('#getSubmissionsByProjectAndFormId() returns the submissiosn for a form', async (t) => {
+test('#getSubmissionsByProjectAndFormId() returns the submissions for a form', async (t) => {
   const submissions = await api.getSubmissionsByProjectIdAndFormId(17, 'umkc_lab_v1');
 
   t.is(submissions.length, 2);
