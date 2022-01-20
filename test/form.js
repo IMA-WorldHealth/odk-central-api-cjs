@@ -16,8 +16,7 @@ test.serial('#api.forms.createFormFromXLSX() creates a new form', async (t) => {
 
 test.serial('#api.forms.addAttachmentToDraftForm() adds an attachment to a draft form', async (t) => {
   const attachmentPath = path.join(__dirname, 'fixtures/lots.csv');
-
-  const attachment = await forms.addAttachmentToDraftForm(17, xmlFormId, attachmentPath);
+  await forms.addAttachmentToDraftForm(17, xmlFormId, attachmentPath);
   t.pass();
 });
 
