@@ -1,6 +1,6 @@
 {
   "name": "@ima-worldhealth/odk-central-api-cjs",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "publishConfig": {
     "access": "public"
   },
