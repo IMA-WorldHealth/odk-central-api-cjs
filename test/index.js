@@ -2,16 +2,6 @@ require('dotenv').config();
 const test = require('ava');
 const { api } = require('..');
 
-test('#projects.getProjects returns list of projects', async (t) => {
-  const projects = await api.projects.getProjects();
-
-  t.is(projects.length, 1);
-
-  const [project] = projects;
-
-  t.is(project.id, 17);
-});
-
 test('#users.getCurrentUserDetails() returns details of the current user', async (t) => {
   const user = await api.users.getCurrentUserDetails();
 
@@ -26,13 +16,6 @@ test('#users.getUserDetails() returns details of a user', async (t) => {
   t.is(user.id, 140);
   t.is(user.email, process.env.ODK_CENTRAL_WEB_EMAIL);
   t.is(user.type, 'user');
-});
-
-test('#projects.getProjectById() returns a project by id', async (t) => {
-  const project = await api.projects.getProjectById(17);
-
-  t.is(project.id, 17);
-  t.is(project.name, 'Integration Test Project');
 });
 
 test('#getProjectAssignments() returns project assignments', async (t) => {
@@ -71,10 +54,10 @@ test('#getProjectAssignmentsForForms() returns project assignments for a form', 
   const assignment = assignments.pop();
 
   // the app user should be assigned
-  t.is(assignment.actorId, 143);
-  t.is(assignment.roleId, 2);
+  t.is(assignment.actorId, 142);
+  t.is(assignment.roleId, 7);
   t.is(assignment.xmlFormId, 'umkc_lab_v1');
-  t.is(assignment.actor.displayName, 'Integration Test App User');
+  t.is(assignment.actor.displayName, 'Enketo sync token for 6292d312-ea57-41b3-b83e-5521d6502bec');
 });
 
 test('#getFormsByProjectId() returns forms in the project id', async (t) => {

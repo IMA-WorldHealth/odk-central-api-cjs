@@ -21,6 +21,13 @@ test.serial('#listAllAppUsers() lists all app users', async (t) => {
   t.is(users.length, 1);
 });
 
+test.serial('#getQRCode() returns a QR code for the app user', async (t) => {
+  const code = await appUsers.getQRCode(17, appUserId);
+
+  t.is(typeof code, 'string');
+  t.true(code.startsWith('data:image/png;base64,'));
+});
+
 test.serial('#deleteAppUser() delete an app user', async (t) => {
   const { success } = await appUsers.deleteAppUser(projectId, appUserId);
   t.is(success, true);
