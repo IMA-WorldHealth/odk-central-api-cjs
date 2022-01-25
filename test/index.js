@@ -66,7 +66,7 @@ test('#getProjectAssignmentsForForms() returns project assignments for a form', 
   const assignments = await api.getProjectAssignmentsForForms(17, 'umkc_lab_v1');
 
   // two actors (sync actor and one device actor) should be assigned
-  t.is(assignments.length, 2);
+  t.is(assignments.length, 1);
 
   const assignment = assignments.pop();
 

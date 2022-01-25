@@ -1,9 +1,8 @@
 require('dotenv').config();
 const test = require('ava');
 const path = require('path');
+const { forms } = require('..').api;
 const { api } = require('..');
-
-const { forms } = api;
 
 const xmlFormId = 'bhima_pv_reception';
 
