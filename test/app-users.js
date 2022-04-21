@@ -18,7 +18,7 @@ test.serial('#createAppUser() creates an app user', async (t) => {
 
 test.serial('#listAllAppUsers() lists all app users', async (t) => {
   const users = await appUsers.listAllAppUsers(projectId);
-  t.is(users.length, 1);
+  t.is(users.length, 2);
 });
 
 test.serial('#getQRCode() returns a QR code for the app user', async (t) => {
@@ -33,5 +33,5 @@ test.serial('#deleteAppUser() delete an app user', async (t) => {
   t.is(success, true);
 
   const users = await appUsers.listAllAppUsers(projectId);
-  t.is(users.length, 0);
+  t.is(users.length, 1);
 });
